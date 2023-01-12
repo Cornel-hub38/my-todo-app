@@ -22,8 +22,12 @@ def add_todo():
 
 st.title("My Todo App")
 st.subheader("This is in fact, my reincarnation of the my to do App")
-st.write("This app is to improv your productivity")
+st.write("This app is to improv your <b>productivity</b>",
+         unsafe_allow_html=True)
 
+
+st.text_input(label="my input", placeholder="Add new todo ....",
+              on_change=add_todo, key='new_todo')
 
 for index, todo in enumerate(todos):
     checkbox = st.checkbox(todo, key=todo)
@@ -35,9 +39,6 @@ for index, todo in enumerate(todos):
 
 
 
-
-st.text_input(label="my input", placeholder="Add new todo ....",
-              on_change=add_todo, key='new_todo')
 
 print("HElllllo")
 
